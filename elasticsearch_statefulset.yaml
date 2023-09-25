@@ -62,7 +62,7 @@ spec:
           - name: cluster.initial_master_nodes
             value: 'elasticsearch-0,elasticsearch-1,elasticsearch-2'
           - name: ES_JAVA_OPTS
-            value: '-Xms1024m -Xmx1568m'
+            value: '-Xms512m -Xmx768m'
           - name: xpack.security.enabled
             value: 'false'
           - name: TZ
