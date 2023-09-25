@@ -3,7 +3,6 @@
 ##################################################  
 apiVersion: apps/v1
 kind: StatefulSet
-#kind: Deployment
 metadata:
   name: elasticsearch
 spec:
@@ -75,8 +74,8 @@ spec:
     - kind: PersistentVolumeClaim
       apiVersion: v1
       metadata:
-        name: trident-data
-        creationTimestamp: null
+        name: elasticsearch-data
+        namespace: test
       spec:
         accessModes:
           - ReadWriteOnce
