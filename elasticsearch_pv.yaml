@@ -17,4 +17,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
-    path: /var/lib/kafka/
+    path: /usr/share/elasticsearch/data/
