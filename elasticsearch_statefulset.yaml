@@ -4,7 +4,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: elasticsearch
+  name: es-cluster
 spec:
   replicas: 3
   serviceName: elasticsearch
@@ -63,9 +63,9 @@ spec:
                 fieldPath: metadata.name
           - name: discovery.seed_hosts
             value: >-
-              elasticsearch-0.elasticsearch,elasticsearch.elasticsearch,elasticsearch.elasticsearch
+              es-cluster-0.elasticsearch,es-cluster.elasticsearch,es-cluster.elasticsearch
           - name: cluster.initial_master_nodes
-            value: 'elasticsearch-0,elasticsearch-1,elasticsearch-2'
+            value: 'es-cluster-0,es-cluster-1,es-cluster-2'
           - name: ES_JAVA_OPTS
             value: '-Xms512m -Xmx768m'
           - name: xpack.security.enabled
