@@ -4,13 +4,12 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: elasticsearch-pv
-  namespace: test 
+  name: elasticsearch-pv1
   labels:
     app: elasticsearch
 spec:
   capacity:
-    storage: 20Gi
+    storage: 2Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -18,3 +17,37 @@ spec:
   storageClassName: local-storage
   hostPath:
     path: /usr/share/elasticsearch/data/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-pv2
+  labels:
+    app: elasticsearch
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath:
+    path: /usr/share/elasticsearch/data/
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-pv3
+  labels:
+    app: elasticsearch
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath:
+    path: /usr/share/elasticsearch/data/
+---
