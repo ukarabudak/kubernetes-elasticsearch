@@ -24,7 +24,7 @@ spec:
           securityContext:
             privileged: true
           volumeMounts:
-            - name: data
+            - name: es-data
               mountPath: /usr/share/elasticsearch/data
         - name: increase-vm-max-map
           image: busybox
